@@ -24,7 +24,7 @@ export default {
 
             if(orders === null)
             {
-                axios.get("http://localhost:8080/api/v2/orders", { headers: { "Content-Type": "application/json", Authorization: `Bearer ${process.env.VUE_APP_TOKEN}`, },})
+                axios.get("https://eshop-deve.herokuapp.com/api/v2/orders", { headers: { "Content-Type": "application/json", Authorization: `Bearer ${process.env.VUE_APP_TOKEN}`, },})
                     .then((response) => {
                     this.state.orders = response.data.orders 
                     localStorage.setItem('orders',JSON.stringify(response.data.orders))
